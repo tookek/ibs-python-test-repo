@@ -54,6 +54,7 @@ class YAMLWriter(BaseWriter):
         string_io = StringIO(yaml_data)
         return string_io
 
+
 class DataGenerator:
     def __init__(self, data: list[list[int, str, float]] = None):
         self.data: list[list[int, str, float]] = data
@@ -96,8 +97,8 @@ csv_writer = CSVWriter()
 yaml_writer = YAMLWriter()
 
 try:
-    generator.to_file('7. Генерация файлов в форматах CSV, JSON и YAML\data.json', json_writer)
-    generator.to_file('7. Генерация файлов в форматах CSV, JSON и YAML\data.csv', csv_writer)
-    generator.to_file('7. Генерация файлов в форматах CSV, JSON и YAML\data.yaml', yaml_writer)
+    generator.to_file('mock_data.json', json_writer)
+    generator.to_file('mock_data.csv', csv_writer)
+    generator.to_file('mock_data.yaml', yaml_writer)
 except ValueError as e:
     print(e)
