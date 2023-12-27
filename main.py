@@ -11,7 +11,7 @@ class Words(BaseModel):
     words: List[str]
 
 
-class InputData(BaseModel):
+class Number(BaseModel):
     number: int
 
 
@@ -42,6 +42,6 @@ async def find_unique_words(words: Words):
 
 
 @app.post("/int_to_roman", response_model=Dict[str, str])
-def convert_to_roman(data: InputData):
+def convert_to_roman(data: Number):
     result = int_to_roman(data.number)
     return {"roman_number": result}
