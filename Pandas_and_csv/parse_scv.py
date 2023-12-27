@@ -10,8 +10,3 @@ def average_age_by_position(file_path: str):
     else:
         return {"status_code": 400, "data": "Невалидный файл"}
 
-
-print(average_age_by_position("test_files/employees1.csv"))
-print(average_age_by_position("test_files/employees2.csv"))
-print(average_age_by_position("test_files/employees3.csv"))
-print(average_age_by_position("test_files/employees4.csv"))

@@ -19,8 +19,3 @@ def int_to_roman(num: int):
             num -= val[i]
         i += 1
     return roman_num
-
-
-print(int_to_roman(32))
-print(int_to_roman(54))
-print(int_to_roman(1984))

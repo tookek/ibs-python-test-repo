@@ -10,10 +10,3 @@ def find_in_different_registers(word_list: list[str]) -> list[str]:
             uniq_words.append(word.lower())
 
     return uniq_words
-
-
-words = ["Мама", "МАМА", "Мама", "папа", "ПАПА", "Мама", "ДЯдя", "брАт", "Дядя", "Дядя", "Дядя"]
-print(find_in_different_registers(words))
-
-words = ['МАМА', 'Мама', 'БРАТ', 'папа', 'ПАПА', 'ДЯдя', 'брАт', 'Дядя', 'Дядя', 'Дядя']
-print(find_in_different_registers(words))
