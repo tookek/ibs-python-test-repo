@@ -30,6 +30,11 @@ app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
 
+@app.get("/", response_class=HTMLResponse)
+async def index(request: Request):
+    return templates.TemplateResponse("converter.html", {"request": request})
+
+
 @app.post("/convert", response_class=HTMLResponse)
 async def convert(request: Request):
     form = await request.form()
@@ -37,5 +42,5 @@ async def convert(request: Request):
     roman_number = int_to_roman(int(arabic_number))
     return templates.TemplateResponse(
         "converter.html",
-        {"request": request, "number_input": arabic_number, "roman_number": roman_number}
+        {"request": request, "arabic_number": arabic_number, "roman_number": roman_number}
     )
